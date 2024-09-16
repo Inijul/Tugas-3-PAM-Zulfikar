@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:boxBackgroundMode="none" >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="48sp"
+            android:gravity="end"
+            android:inputType="none"
+            android:focusable="false" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button7"
+            android:text="7"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button8"
+            app:layout_constraintBottom_toTopOf="@id/button4" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button8"
+            style="@style/CalculatorButtonRound"
+            android:onClick="onDigit"
+            android:text="8"
+            app:layout_constraintBottom_toTopOf="@id/button5"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@id/button9"
+            app:layout_constraintStart_toEndOf="@id/button7"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button9"
+            android:text="9"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button8"
+            app:layout_constraintEnd_toStartOf="@id/buttonDivide"
+            app:layout_constraintBottom_toTopOf="@id/button6" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonDivide"
+            android:text="/"
+            android:onClick="onOperator"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/button9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/buttonMultiply" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button4"
+            android:text="4"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button5"
+            app:layout_constraintBottom_toTopOf="@id/button1" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button5"
+            android:text="5"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button8"
+            app:layout_constraintStart_toEndOf="@id/button4"
+            app:layout_constraintEnd_toStartOf="@id/button6"
+            app:layout_constraintBottom_toTopOf="@id/button2" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button6"
+            android:text="6"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button9"
+            app:layout_constraintStart_toEndOf="@id/button5"
+            app:layout_constraintEnd_toStartOf="@id/buttonMultiply"
+            app:layout_constraintBottom_toTopOf="@id/button3" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMultiply"
+            android:text="*"
+            android:onClick="onOperator"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/buttonDivide"
+            app:layout_constraintStart_toEndOf="@id/button6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/buttonMinus" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button1"
+            android:text="1"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button4"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/button2"
+            app:layout_constraintBottom_toTopOf="@id/button0" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button2"
+            android:text="2"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button5"
+            app:layout_constraintStart_toEndOf="@id/button1"
+            app:layout_constraintEnd_toStartOf="@id/button3"
+            app:layout_constraintBottom_toTopOf="@id/buttonClear" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button3"
+            android:text="3"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button6"
+            app:layout_constraintStart_toEndOf="@id/button2"
+            app:layout_constraintEnd_toStartOf="@id/buttonMinus"
+            app:layout_constraintBottom_toTopOf="@id/buttonEqual" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonMinus"
+            android:text="-"
+            android:onClick="onOperator"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/buttonMultiply"
+            app:layout_constraintStart_toEndOf="@id/button3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/buttonPlus" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button0"
+            android:text="0"
+            android:onClick="onDigit"
+            style="@style/CalculatorButtonRound"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/buttonClear"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonClear"
+            android:text="C"
+            android:onClick="onClear"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button2"
+            app:layout_constraintStart_toEndOf="@id/button0"
+            app:layout_constraintEnd_toStartOf="@id/buttonEqual"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonEqual"
+            android:text="="
+            android:onClick="onEqual"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/button3"
+            app:layout_constraintStart_toEndOf="@id/buttonClear"
+            app:layout_constraintEnd_toStartOf="@id/buttonPlus"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonPlus"
+            android:text="+"
+            android:onClick="onOperator"
+            style="@style/CalculatorButton"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toBottomOf="@id/buttonMinus"
+            app:layout_constraintStart_toEndOf="@id/buttonEqual"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
